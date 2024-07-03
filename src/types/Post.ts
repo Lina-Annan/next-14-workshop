@@ -1,14 +1,12 @@
 export type Post = {
   id: number;
-  slug: string;
-  url: string;
   title: string;
-  content: string;
-  image: string;
-  thumbnail: string;
-  status: string;
-  category: string;
-  publishedAt: string;
-  updatedAt: string;
+  body: string;
+  tags: string[];
+  reactions: {
+    likes: number;
+    dislikes: number;
+  };
+  views: number;
   userId: number;
 };
