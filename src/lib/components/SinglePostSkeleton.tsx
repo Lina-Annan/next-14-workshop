@@ -1,6 +1,6 @@
 export default function SinglePostSkeleton() {
   return (
-    <main className="max-w-[800px] p-8 mx-auto space-y-6">
+    <main className="max-w-[800px] p-8 mx-auto space-y-6 animate-pulse">
       <div className="bg-slate-300/60 aspect-video w-full rounded-2xl"></div>
 
       <div className="flex gap-2">
