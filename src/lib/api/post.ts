@@ -1,9 +1,11 @@
 import { Post } from "@/types/Post";
 
 export async function getPost(id: number) {
-  const data = (await fetch(`https://dummyjson.com/posts/${id}`).then(
-    (response) => response.json()
-  )) as Post;
+  await new Promise((resolve) => setTimeout(resolve, 1000));
 
-  return data;
+  const res = await fetch(`https://dummyjson.com/posts/${id}`);
+  const data = await res.json();
+  data.image = `https://picsum.photos/seed/${id}/1000/700`;
+
+  return data as Post & { image: string };
 }

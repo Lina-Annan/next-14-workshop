@@ -4,10 +4,9 @@ const config: Config = {
   content: ["./src/app/**/*.tsx", "./src/lib/**/*.tsx"],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      backgroundColor: {
+        foreground: "rgb(var(--color-foreground-rgb))",
+        background: "rgb(var(--color-background-rgb))",
       },
     },
   },

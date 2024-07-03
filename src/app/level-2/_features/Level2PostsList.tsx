@@ -1,6 +1,8 @@
 "use client";
 
+import Header from "@/lib/components/Header";
 import { PostCard } from "@/lib/components/PostCard";
+import PostCardSkeleton from "@/lib/components/PostCardSkeleton";
 import SearchInput from "@/lib/components/SearchInput";
 import useInfinitePostsScrollQuery from "@/lib/hooks/useInfinitePostsScrollQuery";
 import { Post } from "@/types/Post";
@@ -19,16 +21,14 @@ export default function Level2PostsList() {
 
   return (
     <>
-      <div className="sticky top-0 my-10 left-0 right-0 flex justify-center">
-        <SearchInput
-          placeholder="Search anything"
-          onChange={(e) => handleSetSearchText(e.target.value)}
-        />
-      </div>
+      <Header handleSetSearchText={handleSetSearchText} />
 
-      <div className="grid grid-cols-4 gap-3 ">
+      <div className="grid grid-cols-4 gap-3 p-8">
         {posts.map((post) => (
-          <PostCard key={post.id} post={post} level={2} />
+          <>
+            <PostCard key={post.id} post={post} level={2} />
+            <PostCardSkeleton />
+          </>
         ))}
       </div>
 

@@ -34,14 +34,9 @@ export const getPosts = async (params: Params) => {
   return {
     ...data,
     posts: data.posts.map((post, i) => {
-      const imageSize = {
-        width: 500 + (params.skip + 1) * (i + 1),
-        height: 350 + (params.skip + 1) * (i + 1),
-      };
-
       return {
         ...post,
-        image: `https://picsum.photos/${imageSize.width}/${imageSize.height}`,
+        image: `https://picsum.photos/seed/${post.id}/${500}/${350}`,
       };
     }),
   };
